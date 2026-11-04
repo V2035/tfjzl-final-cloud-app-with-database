@@ -37,7 +37,7 @@
     {% endfor %}
 
     {% if user.is_authenticated %}
-        {% if course.enrollment_set.all %}
+        {% if is_enrolled %}
             <h3 class="mt-4">Course assessment</h3>
             {% if course.question_set.all %}
                 <form method="post" action="{% url 'onlinecourse:submit' course.id %}">
